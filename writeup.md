@@ -1,23 +1,12 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
+[image1]: ./gray.png "Step 1"
+[image2]: ./canny.png "Step 2"
+[image3]: ./cut.png "Step 3"
+[image4]: ./hough.png "Step 4"
+[image5]: ./show.png "Step 5"
 
----
-
-**Finding Lane Lines on the Road**
-
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
----
 
 ### Reflection
 
@@ -25,9 +14,15 @@ The goals / steps of this project are the following:
 
 My pipeline consisted of 4 steps.
 1. Convert the images to grayscale. 
+![alt text][image1]
 2. Apply Canny filter on the images.
+![alt text][image2]
 3. Cut the images to trapezoids where lane markers likely to be appered.
+![alt text][image3]
 4. Apply Hough Line Transform to the images.
+![alt text][image4]
+5. Finally, overlay the computed lines on the original images.
+![alt text][image5]
 
 In order to draw a single line on the left and right lanes, I modified the draw__lines() function by averaging the calcurated lines.
 By Hough Transform, we get a lot of short and long lines along the lane markers.
